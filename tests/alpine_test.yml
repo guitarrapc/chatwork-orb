@@ -4,6 +4,7 @@ jobs:
   build:
     executor: curlimages/curl:latest
     steps:
-        - chatwork/notify:
-            message: "Hello+Chatwork%21"
-            room_id: 128644693
+      - checkout
+      - chatwork/notify:
+          message: "Hello+Chatwork%21"
+          room_id: 128644693
