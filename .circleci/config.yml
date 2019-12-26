@@ -1,8 +1,8 @@
 version: 2.1
 
 orbs:
-  orb-tools: circleci/orb-tools@volatile
-  nuget-cache: 'guitarrapc/chatwork@dev:alpha'
+  orb-tools: circleci/orb-tools@8.27.3
+  chatwork: 'guitarrapc/chatwork@dev:alpha'
 
 # yaml anchor filters
 integration-dev_filters: &integration-dev_filters
@@ -28,7 +28,7 @@ workflows:
           requires:
             - orb-tools/lint
       - orb-tools/publish-dev:
-          orb-name: guitarrapc/nuget-cache
+          orb-name: guitarrapc/chatwork
           requires:
             - orb-tools/pack
       - orb-tools/trigger-integration-workflow:
@@ -57,7 +57,7 @@ workflows:
           filters: *integration-master_filters
       - orb-tools/test-in-builds:
           attach-workspace: true
-          orb-name: nuget-cache
+          orb-name: chatwork
           test-steps:
             - orb-tools/local-test-build:
                 test-config-location: tests/alpine_test.yml
@@ -66,7 +66,7 @@ workflows:
             - pack-dev
       - orb-tools/test-in-builds:
           attach-workspace: true
-          orb-name: nuget-cache
+          orb-name: chatwork
           test-steps:
             - orb-tools/local-test-build:
                 test-config-location: tests/alpine_test.yml

@@ -27,4 +27,4 @@ usage:
       jobs:
         - chatwork/notify:
             message: "Hello+Chatwork%21"
-            room_id: 12345
+            room_id: "12345"
