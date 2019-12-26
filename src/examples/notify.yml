@@ -1,0 +1,30 @@
+description: |
+  Add message to the chatwork room. Use %0A to express NEW LINE.
+  You can handle send timing with `when`.
+  # send only when on_success (default)
+  - chatwork/notify:
+      message: "Success message"
+      room_id: 12345
+  # send only when on_fail
+  - chatwork/notify:
+      message: "Failed message"
+      room_id: 12345
+      when: on_fail
+  # send always
+  - chatwork/notify:
+      message: "Always message"
+      room_id: 12345
+      when: always
+
+usage:
+  version: 2.1
+
+  orb:
+    chatwork: guitarrac/chatwork@x.y
+
+  workflow:
+    build:
+      jobs:
+        - chatwork/notify:
+            message: "Hello+Chatwork%21"
+            room_id: 12345

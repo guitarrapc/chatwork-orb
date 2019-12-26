@@ -1,0 +1,12 @@
+version: 2.1
+
+orb:
+  chatwork: guitarrapc/chatwork@volatile
+
+jobs:
+  build:
+    executor: curlimages/curl:latest
+    steps:
+        - chatwork/notify:
+            message: "Hello+Chatwork%21"
+            room_id: 128644693

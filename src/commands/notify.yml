@@ -1,0 +1,26 @@
+description: Add new message to the chat.
+parameters:
+  message:
+    type: string
+    default: "empty message"
+  room_id:
+    type: string
+  token:
+    type: env_var_name
+    default: CHATWORK_TOKEN
+  self_unread:
+    type: enum
+    enum: ["0", "1"]
+    default: "0"
+  api_version:
+    type: string
+    default: "v2"
+  when:
+    type: enum
+    enum: ["on_success", "on_fail", "always"]
+    default: on_success
+steps:
+  - run:
+      command: |
+        curl -X POST -H "X-ChatWorkToken: $<< parameters.token >>" -d "body=<< parameters.message >>&self_unread=<< parameters.self_unread >>" "https://api.chatwork.com/<< parameters.api_version >>/rooms/{<< parameters.room_id >>}/messages"
+      when: << parameters.when >>
