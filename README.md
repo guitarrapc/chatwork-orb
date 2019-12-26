@@ -27,7 +27,7 @@ setup orb account and namespace.
 # require perconal api tokens
 $ circleci setup
 $ circleci namespace create guitarrapc github guitarrapc
-$ circleci orb create guitarrapc/chatwork-orb
+$ circleci orb create guitarrapc/chatwork
 ```
 
 validate before publish.
@@ -39,11 +39,11 @@ $ circleci orb validate orb.yml
 publish orb to the dev.
 
 ```
-$ circleci orb publish orb.yml guitarrapc/chatwork-orb@dev:0.x.0
+$ circleci orb publish orb.yml guitarrapc/chatwork@dev:0.x.0
 ```
 
 public orb to the production.
 
 ```
-$ circleci orb publish promote guitarrapc/chatwork-orb@0.x.0
+$ circleci orb publish promote guitarrapc/chatwork@0.x.0
 ```
