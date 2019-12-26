@@ -1,8 +1,5 @@
 version: 2.1
 
-orb:
-  chatwork: guitarrapc/chatwork@volatile
-
 jobs:
   build:
     executor: curlimages/curl:latest
