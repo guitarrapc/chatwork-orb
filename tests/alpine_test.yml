@@ -5,7 +5,6 @@ jobs:
     docker:
       - image: curlimages/curl:latest
     steps:
-      - checkout
       - chatwork/notify:
-          message: "Hello+Chatwork%21"
+          message: "Circleci Orb test message from $CIRCLE_BUILD_URL"
           room_id: "128644693"
