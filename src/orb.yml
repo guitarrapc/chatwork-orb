@@ -1,7 +1,7 @@
 version: 2.1
 
 description: |
-  nuget cache on CircleCI.
+  Add new message to the chatwork from CircleCI.
 
 display:
   home_url: https://github.com/guitarrapc/chatwork-orb

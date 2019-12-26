@@ -2,7 +2,6 @@ description: Add new message to the chat.
 parameters:
   message:
     type: string
-    default: "empty message"
   room_id:
     type: string
   token:
