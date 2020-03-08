@@ -2,7 +2,6 @@ version: 2.1
 
 orbs:
   orb-tools: circleci/orb-tools@8.27.3
-  chatwork: 'guitarrapc/chatwork@dev:alpha'
 
 # yaml anchor filters
 integration-dev_filters: &integration-dev_filters
